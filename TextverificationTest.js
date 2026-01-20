@@ -1,3 +1,10 @@
+const { Builder, By, until } = require('selenium-webdriver');
+const { expect } = require('chai');
+
+async function testDashboard() {
+  let driver = await new Builder().forBrowser('chrome').build();
+
+  await driver.get('');
 await driver.wait(
           until.elementLocated(By.id('title')),
           10000
@@ -12,4 +19,6 @@ await driver.wait(
         } else {
           console.log('TEST FAILED');
         }
-        
+}
+
+testDashboard();
