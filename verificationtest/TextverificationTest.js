@@ -14,7 +14,12 @@ await driver.wait(
           .findElement(By.tagName('h2'))
           .getText();
         
-          expect(titleText).to.equal('EduPortal');
+        if (titleText === 'EduPortal') {
+          console.log('TEST PASSED');
+        } else {
+          console.log('TEST FAILED');
+        }
+        expect(titleText).to.equal('EduPortal');
 
 }
 
